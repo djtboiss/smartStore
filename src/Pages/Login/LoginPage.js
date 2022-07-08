@@ -4,8 +4,6 @@ import { signInWithEmailAndPassword} from "firebase/auth";
 import { auth } from '../../Firebase/Firebase';
 import { useNavigate } from "react-router-dom";
 import {Button,Input} from 'reactstrap';
-import { Link } from "react-router-dom";
-
 
 function LoginPage() {
   let navigate = useNavigate();
@@ -13,6 +11,7 @@ function LoginPage() {
     const [user,setUser]=useState({});
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
+    
   const login=()=>{
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
@@ -67,7 +66,6 @@ function LoginPage() {
       <Button className='bg-primary' type="button"  onClick={login}> Login </Button>
       </div>
       
-      <Link to="/create" className='mb-2'>join uss</Link>
     </div>
   )
 }

@@ -6,9 +6,15 @@ import { SidebarData } from './SidebarData';
 import { IconContext } from 'react-icons';
 import "./Sidebar.css";
 
-
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
+  const role="manager";
+
+  const SideData=SidebarData.filter((data)=>{
+    if(role==="admin")
+       return data
+    return data.allowed==="public" || data.allowed===role ;
+  });
 
   const showSidebar = () => setSidebar(!sidebar);
 
@@ -28,7 +34,9 @@ function Navbar() {
                 <AiIcons.AiOutlineClose />
               </Link>
             </li>
-            {SidebarData.map((item, index) => {
+            {
+            
+            SideData.map((item, index) => {
               return (
                 <li key={index} className={item.cName}>
                   <Link to={item.path}>
@@ -38,11 +46,13 @@ function Navbar() {
                 </li>
                 
               );
-            })}
+            })
+            
+            }
           </ul>
         </nav>
          <div className={sidebar ? 'd-flex bg-dark d-lg-none' : 'd-flex bg-dark d-block d-lg-none'} style={{textDecoration: ' none '}}>
-            {SidebarData.map((item, index) => {
+            {SideData.map((item, index) => {
               return (
                 <li key={index} className="cName">
                   <Link to={item.path}>

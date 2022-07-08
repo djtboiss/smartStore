@@ -2,26 +2,29 @@ import React from 'react';
 
 import * as AiIcons from 'react-icons/ai';
 
-
 export const SidebarData = [
   {
     title: 'DASHBOARD',
     path: '/home',
-    cName: 'nav-text'
+    cName: 'nav-text',
+    allowed: 'public'
   },
   {
     title: 'CUSTOMER',
-    path: '/admin',
-    cName: 'nav-text'
+    path: '/customer',
+    cName: 'nav-text',
+    allowed: 'public'
   },
   {
     title: 'HISTORY',
-    path: '/manager',
-    cName: 'nav-text'
+    path: '/history',
+    cName: 'nav-text',
+    allowed: 'manager'
   },
   {
     title: 'ADD TEAM',
     path: '/create',
-    cName: 'nav-text'
+    cName: 'nav-text',
+    allowed: 'admin'
   }
 ];
