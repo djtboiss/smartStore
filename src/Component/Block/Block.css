@@ -1,0 +1,31 @@
+.Block-container{
+    background-color: #d7ddde;
+    border-radius: 10px;
+    display: flex;
+    height: 9rem;
+    width: 17rem;
+    margin: 5rem;
+    box-shadow: 5px 5px 10px black;
+}
+.dash-img{
+    margin: 1rem;
+    margin-top: 2rem;
+    height: 4rem;
+    width: 4rem;
+}
+.Block2-container{
+    margin: 2rem;
+    margin-left: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.block2-head{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+}
+.block2-para{
+    margin-top: -0.7em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+
+}

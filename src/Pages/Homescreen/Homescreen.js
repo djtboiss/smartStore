@@ -4,14 +4,20 @@ import { StackChart } from '../../Component/Charts/StackChart/StackChart';
 import "./Homescreen.css";
 import Navbar from '../../Component/SlideBar/Sidebar';
 import Jumbotron from '../../Component/Jumbotron/Jumbotron';
+import Block from '../../Component/Block/Block';
 
 
 function Homescreen() {
   return (
     <div>
-        
         <Navbar />
         <Jumbotron/>
+        <div className='home-container'>
+          <div><Block/></div>
+          <div><Block/></div>
+          <div><Block/></div>
+          <div><Block/></div>
+        </div>
         <div className='container-fluid m-0 mt-4 gap-4' >
             <div className='row ' >  
             <div className='d-none d-lg-flex col-lg-3 '> 
@@ -29,7 +35,11 @@ function Homescreen() {
 
             </div>
           </div>
+
+
         </div>
+
+        
 
   
 
