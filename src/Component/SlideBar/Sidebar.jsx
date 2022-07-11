@@ -8,7 +8,7 @@ import "./Sidebar.css";
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
-  const role="manager";
+  const role="admin";
 
   const SideData=SidebarData.filter((data)=>{
     if(role==="admin")

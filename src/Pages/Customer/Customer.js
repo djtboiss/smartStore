@@ -1,21 +1,93 @@
 import React from 'react';
 import "./Customer.css";
-import { Table } from 'reactstrap';
-import {Button} from "reactstrap";
+import {Table, Badge  } from 'reactstrap';
 import Navbar from '../../Component/SlideBar/Sidebar';
-import { Badge } from 'reactstrap';
+import FloatingModal from '../../Component/FloatingModal/FloatingModal';
+
+
+
 function Customer() {
+  
 
 
-
-
+  const User_Data = [
+    {
+      id:1,
+      name: 'Rishabh',
+      cart: 4,
+      sum: 500,
+      cartItem:[{
+        product_id:12,
+        product_name:"oreo",
+        product_quantity:4,
+        product_price:18
+      },{
+        product_id:123,
+        product_name:"oreo_double",
+        product_quantity:4,
+        product_price:28
+      }]
+    },
+    {
+      id:2,
+      name: 'Tintin',
+      cart: 4,
+      sum: 500,
+      cartItem:[{
+        product_id:12,
+        product_name:"oreo",
+        product_quantity:4,
+        product_price:18
+      },{
+        product_id:123,
+        product_name:"oreo_double",
+        product_quantity:4,
+        product_price:28
+      }]
+    },
+    {
+      id:3,
+      name: 'Vishu',
+      cart: 4,
+      sum: 500,
+      cartItem:[{
+        product_id:12,
+        product_name:"oreo",
+        product_quantity:4,
+        product_price:18
+      },{
+        product_id:123,
+        product_name:"oreo_double",
+        product_quantity:4,
+        product_price:28
+      }]
+    },
+    {
+      id:4,
+      name: 'shubh',
+      cart: 4,
+      sum: 500,
+      cartItem:[{
+        product_id:12,
+        product_name:"oreo",
+        product_quantity:4,
+        product_price:18
+      },{
+        product_id:123,
+        product_name:"oreo_double",
+        product_quantity:4,
+        product_price:28
+      }]
+    }
+  ]
+  
   return (
     <>
       <Navbar />
+ 
       <div className='table'>
-
         <div className='badge-container gap-4'>
-          <div><Badge className='m-0'>CURRENT USER : 5</Badge></div>
+          <div><Badge className='m-0'>CURRENT USER : {User_Data.length}</Badge></div>
           <div><Badge className='m-0'>CURRENT SUM : 500</Badge></div>
         </div>
 
@@ -30,13 +102,21 @@ function Customer() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>RISHABH SUYAL</td>
-            <td>4</td>
-            <td>45000</td>
-            <td> <Button>REMOVE</Button> </td>
-          </tr>
+         
+            {
+
+              User_Data.map( (user)=> <>
+               <tr>
+                  <th scope="row">{user.id}</th>
+                  <td>{user.name}</td>
+                  <td>{user.cart}</td>
+                  <td>{user.sum}</td>
+                  <td><FloatingModal user_data={user.cartItem}/></td>
+                  </tr>
+              
+              </> )
+            }
+   
           
         </tbody>
       </Table>
