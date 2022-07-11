@@ -21,18 +21,13 @@ function Navbar() {
   return (
     <>
       <IconContext.Provider value={{ color: '#fff' }}>
-        <div className=' justify-content-start align-items-center d-none d-lg-flex bg-dark' style={{background: 'gray', height: '60px',overflow: 'hidden' }} >
-          <Link to='#' className='menu-bars m-5 ' style={{overflow: 'hidden'}} >
-            <FaIcons.FaBars onClick={showSidebar} />
-          </Link>
+        <div className=' justify-content-start align-items-center d-none d-lg-flex bg-white' style={{background: 'gray', height: '60px',overflow: 'hidden' }} >
+        
           
         </div>
-        <nav className={sidebar ? 'nav-menu active bg-dark d-none d-lg-block' : 'nav-menu bg-dark d-block'}>
-          <ul className='nav-menu-items bg-dark order-lg-first'  onClick={showSidebar}>
+        <nav className={!sidebar ? 'nav-menu active bg-dark d-none d-lg-block' : 'nav-menu bg-dark d-block'}>
+          <ul className='nav-menu-items bg-dark order-lg-first'  onClick={!showSidebar}>
             <li className='navbar-toggle bg-dark '>
-              <Link to='#' className='menu-bars '>
-                <AiIcons.AiOutlineClose />
-              </Link>
             </li>
             {
             
