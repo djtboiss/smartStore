@@ -1,0 +1,8 @@
+.decoration{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+}
+.decoration:hover{
+    color: black;
+}

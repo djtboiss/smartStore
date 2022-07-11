@@ -7,7 +7,6 @@ import CreateUser from './Pages/CreateUser/CreateUser';
 import Customer from './Pages/Customer/Customer';
 import HistoryCustomer from './Pages/HistoryCustomer/HistoryCustomer';
 import UserProfile from './Pages/Profile/userProfile';
-
 export default function App() {
 
   return (
@@ -18,7 +17,7 @@ export default function App() {
         <Route path="history" element={<ProtectedRoute><HistoryCustomer/></ProtectedRoute>} />
         <Route path="/create" element={<ProtectedRoute><CreateUser/> </ProtectedRoute>} />
         <Route path="/" element={ <LoginPage/> } />
-        <Route path="/profile" element={ <UserProfile/> } />
+        <Route path="/profile" element={ <ProtectedRoute><UserProfile /></ProtectedRoute> } />
         
     </Routes>
     

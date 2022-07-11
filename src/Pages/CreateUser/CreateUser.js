@@ -47,7 +47,7 @@ function CreateUser() {
     const [password,setPassword]=useState("");
     const [role,setRole]=useState("");
     const [name,setName]=useState("");
-    const [user, setuser] = useState({});
+
 
 
     function clear_feild(){
@@ -84,6 +84,7 @@ function CreateUser() {
                 email,
                 password
             );
+            
             v_created();
             sendEmail(e); 
         }catch(error){
